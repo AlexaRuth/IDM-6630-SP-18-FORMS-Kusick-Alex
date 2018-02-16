@@ -9,7 +9,7 @@ require 'inc/conn.php';
 
 		//$query = "INSERT INTO `hero` (`id`, `name`) VALUES (NULL, 'Sailormoon')";
 
-		$query = "INSERT INTO hero (id, name) VALUES ('" . $_REQUEST['NULL'] . "', '" . $_REQUEST['name'] . "')";
+		$query = "INSERT INTO hero (name) VALUES ('" . $_REQUEST['name'] . "')";
 		$conn->exec($query);
 		//echo " <br /> Values inserted into the database.";
 
