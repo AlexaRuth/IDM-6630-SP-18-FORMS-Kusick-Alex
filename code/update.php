@@ -27,7 +27,7 @@
 	try {
 			$conn = new PDO("mysql:host=$host;dbname=$database", $username, $password);
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			//echo " Connected Successfully ";
+			echo "Connected Successfully";
 
 			//$conn = null;
 
@@ -37,21 +37,16 @@
 			}
 
 
-//SELECT COMMANDS
+//UPDATE COMMANDS
 
 	try {
 
-		//$query = "SELECT * FROM hero ORDER BY id DESC" ;
-		$query = "SELECT * FROM hero WHERE name = 'Sailormoon' "; //to find a specific piece of information 
-
-		foreach ($conn->query($query) as $hero) {
-			//echo $hero['id'] . ", " . $hero['name']; //do not show ID
-			echo $hero['name'];
-			echo "<br />";
-		}
+		$query = "UPDATE hero SET name = 'Usagi Tsukino' WHERE id = 1" ;
+		$conn->exec($query);
+		echo "Data Updated";
 
 		} catch(PDOException $e) {
-			echo "Select Failed: " . $e->getMessage();
+			echo "Update Failed: " . $e->getMessage();
 			exit();
 		}
 

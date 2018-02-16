@@ -27,7 +27,7 @@
 	try {
 			$conn = new PDO("mysql:host=$host;dbname=$database", $username, $password);
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			//echo " Connected Successfully ";
+			echo "Connected Successfully";
 
 			//$conn = null;
 
@@ -37,23 +37,21 @@
 			}
 
 
-//SELECT COMMANDS
-
+//INSERT COMMANDS
 	try {
 
-		//$query = "SELECT * FROM hero ORDER BY id DESC" ;
-		$query = "SELECT * FROM hero WHERE name = 'Sailormoon' "; //to find a specific piece of information 
+		$query = "INSERT INTO `hero` (`id`, `name`) VALUES (NULL, 'Sailormoon')";
+		$conn->exec($query);
+		echo "<br /> Values inserted into the database.";
 
-		foreach ($conn->query($query) as $hero) {
-			//echo $hero['id'] . ", " . $hero['name']; //do not show ID
-			echo $hero['name'];
-			echo "<br />";
-		}
+		$conn = null;
 
-		} catch(PDOException $e) {
-			echo "Select Failed: " . $e->getMessage();
-			exit();
-		}
+	} catch(PDOException $e) {
+		echo "Insert Failed: " . $e->getMessage();
+		exit();
+
+	}
+
 
 
 	?>

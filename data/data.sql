@@ -16,64 +16,60 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `week04`
+-- Current Database: `week05`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `week04` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `week05` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `week04`;
+USE `week05`;
 
 --
--- Table structure for table `10_Fav_Albums`
+-- Table structure for table `hero`
 --
 
-DROP TABLE IF EXISTS `10_Fav_Albums`;
+DROP TABLE IF EXISTS `hero`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `10_Fav_Albums` (
-  `ID` int(10) NOT NULL AUTO_INCREMENT,
-  `artist` varchar(255) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `year` year(4) NOT NULL,
-  `cover` varchar(255) NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+CREATE TABLE `hero` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `10_Fav_Albums`
+-- Dumping data for table `hero`
 --
 
-LOCK TABLES `10_Fav_Albums` WRITE;
-/*!40000 ALTER TABLE `10_Fav_Albums` DISABLE KEYS */;
-INSERT INTO `10_Fav_Albums` VALUES (1,'Various','Quiero Creedence',2013,'../img/creedence.jpg'),(2,'Empire of the Sun ','Walking on a Dream',2009,'../img/empire.jpg'),(3,'Guns N Roses','Use Your Illusion 1',1973,'../img/illusion.jpg'),(4,'Keane','Best Of Keane',2013,'../img/keane.jpg'),(5,'Kesha','Rainbow',2017,'../img/kesha.jpg'),(6,'Kishi Bashi','151a',2005,'../img/kishi.jpg'),(7,'One Republic','Dreaming Out Loud',2008,'../img/onerepublic.jpg'),(8,'Pink Floyd','Darkside of the Moon',1973,'../img/pinkfloyd.jpg'),(9,'You + Me ','Roseave. ',2014,'../img/roseave.jpg'),(10,'City and Colour','Sometimes',2005,'../img/sometimes.jpg');
-/*!40000 ALTER TABLE `10_Fav_Albums` ENABLE KEYS */;
+LOCK TABLES `hero` WRITE;
+/*!40000 ALTER TABLE `hero` DISABLE KEYS */;
+INSERT INTO `hero` VALUES (1,'Sailormoon');
+/*!40000 ALTER TABLE `hero` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Top 10 Albums`
+-- Table structure for table `sites`
 --
 
-DROP TABLE IF EXISTS `Top 10 Albums`;
+DROP TABLE IF EXISTS `sites`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Top 10 Albums` (
-  `Title` varchar(255) NOT NULL,
-  `Artist` varchar(255) NOT NULL,
-  `Year` year(4) NOT NULL,
-  `Cover` varchar(255) NOT NULL,
-  PRIMARY KEY (`Title`,`Artist`,`Year`,`Cover`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `sites` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `site_name` varchar(255) NOT NULL,
+  `site_url` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Top 10 Albums`
+-- Dumping data for table `sites`
 --
 
-LOCK TABLES `Top 10 Albums` WRITE;
-/*!40000 ALTER TABLE `Top 10 Albums` DISABLE KEYS */;
-INSERT INTO `Top 10 Albums` VALUES ('151a','Kishi Bashi',2012,'img/kishi.jpg'),('Channel Orange','Frank Ocean',2012,'img/frank.jpg'),('Dreaming Out Loud','One Republic',2007,'img/onerepublic.jpg'),('Quiero Creedence ','Various Artists',2016,'img/creedence.jpg'),('Rainbow','Kesha',2017,'img/kesha.jpg'),('Rose Ave.','You + Me',2014,'img/roseave.jpg'),('Sometimes','City and Colour',2005,'img/sometimes.jpg'),('The Best of Keane','Keane',2013,'img/keane.jpg'),('Use Your Illusion 1','Guns N Roses',1973,'img/illusion.jpg'),('Walking On a Dream','Empire of the Sun',2009,'img/empire.jpg');
-/*!40000 ALTER TABLE `Top 10 Albums` ENABLE KEYS */;
+LOCK TABLES `sites` WRITE;
+/*!40000 ALTER TABLE `sites` DISABLE KEYS */;
+INSERT INTO `sites` VALUES (1,'facebook','https://facebook.com'),(2,'google','https://google.com'),(3,'Reddit','https//reddit.com');
+/*!40000 ALTER TABLE `sites` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -85,4 +81,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-12  6:34:42
+-- Dump completed on 2018-02-16  4:33:24

@@ -27,7 +27,7 @@
 	try {
 			$conn = new PDO("mysql:host=$host;dbname=$database", $username, $password);
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			//echo " Connected Successfully ";
+			echo "Connected Successfully";
 
 			//$conn = null;
 
@@ -37,24 +37,18 @@
 			}
 
 
-//SELECT COMMANDS
+//DELETE INFORMATION COMMAND
 
-	try {
+		try {
 
-		//$query = "SELECT * FROM hero ORDER BY id DESC" ;
-		$query = "SELECT * FROM hero WHERE name = 'Sailormoon' "; //to find a specific piece of information 
+			$query = "DELETE FROM hero WHERE id = 1";
+			$conn->exec($query);
+			echo "Data Deleted";
 
-		foreach ($conn->query($query) as $hero) {
-			//echo $hero['id'] . ", " . $hero['name']; //do not show ID
-			echo $hero['name'];
-			echo "<br />";
-		}
-
-		} catch(PDOException $e) {
-			echo "Select Failed: " . $e->getMessage();
-			exit();
-		}
-
+			} catch(PDOException $e) {
+				echo "Delete Failed: " . $e->getMessage();
+				exit();
+			}
 
 	?>
 
