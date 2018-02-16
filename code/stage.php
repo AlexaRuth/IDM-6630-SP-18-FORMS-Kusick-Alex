@@ -18,6 +18,12 @@
 	<?php
 
 		require 'inc/conn.php';
+
+		$query = "SELECT * FROM hero WHERE id = " .$_REQUEST['id'];
+
+		$name_to_update = $conn->query($query)->fetch();
+		echo $name_to_update['id'];
+
 	?>
 
 
@@ -69,9 +75,5 @@
 
 	?>
 
-
-
-
-	
 </body>
 </html>
