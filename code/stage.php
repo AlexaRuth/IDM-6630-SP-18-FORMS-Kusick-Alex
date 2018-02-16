@@ -1,38 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Week 5 Assignment</title>
-</head>
+  </head>
 				
 <body>
 	
-<header>
-	<?php
-		echo "<h1>Favorite Superhero</h1>";
-	?>
-</header>
+	<header>
+		<?php echo "<h1>Favorite Superhero</h1>";?>
+		<nav><?php include "inc/nav.php" ?></nav>
+	</header>
 
-	
-	<?php
+		
+		<?php
 
-		require 'inc/conn.php';
-
-		$query = "SELECT * FROM hero WHERE id = " .$_REQUEST['id'];
-
-		$name_to_update = $conn->query($query)->fetch();
-		echo $name_to_update['id'];
-
-	?>
+			require 'inc/conn.php';
+		?>
 
 
-
-<form action="insert.php" method="post">
-	<input type="text" name="name" placeholder="Name">
-	<input type="submit" value="Add Hero">
-
-</form>
+	<form action="insert.php" method="post">
+		<input type="text" name="name" placeholder="Name">
+		<input type="submit" value="Add Hero">
+	</form>
 
 
 
