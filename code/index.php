@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Week 5 Assignment</title>
   </head>
-				
+
 <body>
-	
+
 	<header>
 		<?php echo "<h1>Favorite Superhero</h1>";?>
 		<nav><?php include "inc/nav.php" ?></nav>
 	</header>
 
-		
+
 		<?php
 
 			require 'inc/conn.php';
@@ -31,7 +31,7 @@
 	<?php
 
 		$query = "SELECT * FROM hero ORDER BY id DESC";
-		//$query = "SELECT * FROM hero WHERE name = 'Sailormoon' "; //to find a specific piece of information 
+		//$query = "SELECT * FROM hero WHERE name = 'Sailormoon' "; //to find a specific piece of information
 
 		foreach ($conn->query($query) as $hero) {
 			//echo $hero['id'] . ", " . $hero['name']; //do not show ID
@@ -43,14 +43,14 @@
 
 				echo "<li>
 				<form action='stage.php' method='post'>
-					<input type='text' name='name' value='". $hero['id'] . "'/>
+					<input type='text' name='id' value='". $hero['id'] . "'/>
 					<input type='submit' value='Edit'></submit>
 				</form>
 				</li>";
 
 				echo "<li>
 				<form action='delete.php' method='post'>
-					<input type='text' name='name' value='". $hero['id'] . "'/>
+					<input type='text' name='id' value='". $hero['id'] . "'/>
 					<input type='submit' value='Delete'></submit>
 				</form>
 				</li>";
@@ -67,6 +67,6 @@
 
 	?>
 
-	
+
 </body>
 </html>

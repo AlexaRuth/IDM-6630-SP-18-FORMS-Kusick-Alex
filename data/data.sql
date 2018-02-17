@@ -31,10 +31,14 @@ DROP TABLE IF EXISTS `hero`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `hero` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+<<<<<<< HEAD
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+>>>>>>> 14e816fe67a630c2417aab41a461c409313a15b8
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,33 +47,12 @@ CREATE TABLE `hero` (
 
 LOCK TABLES `hero` WRITE;
 /*!40000 ALTER TABLE `hero` DISABLE KEYS */;
-INSERT INTO `hero` VALUES (1,'Sailormoon');
+<<<<<<< HEAD
+INSERT INTO `hero` VALUES (5,'Sailormoon');
+=======
+INSERT INTO `hero` VALUES (3,'Test'),(4,'Party!');
+>>>>>>> 14e816fe67a630c2417aab41a461c409313a15b8
 /*!40000 ALTER TABLE `hero` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `sites`
---
-
-DROP TABLE IF EXISTS `sites`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `sites` (
-  `id` int(20) NOT NULL AUTO_INCREMENT,
-  `site_name` varchar(255) NOT NULL,
-  `site_url` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `sites`
---
-
-LOCK TABLES `sites` WRITE;
-/*!40000 ALTER TABLE `sites` DISABLE KEYS */;
-INSERT INTO `sites` VALUES (1,'facebook','https://facebook.com'),(2,'google','https://google.com'),(3,'Reddit','https//reddit.com');
-/*!40000 ALTER TABLE `sites` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -81,4 +64,8 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-16  4:33:24
+<<<<<<< HEAD
+-- Dump completed on 2018-02-16  7:13:06
+=======
+-- Dump completed on 2018-02-16 19:32:59
+>>>>>>> 14e816fe67a630c2417aab41a461c409313a15b8

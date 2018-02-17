@@ -7,7 +7,7 @@ require 'inc/conn.php';
 try {
 	$query = "DELETE FROM hero WHERE id = " .$_REQUEST['id'];
 	//echo $query;
-	
+
 	$conn->exec($query);
 	//echo "Data Deleted";
 	header('Location: index.php');
@@ -18,4 +18,3 @@ try {
 }
 
 ?>
-
