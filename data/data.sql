@@ -35,7 +35,11 @@ CREATE TABLE `hero` (
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 <<<<<<< HEAD
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+>>>>>>> 14e816fe67a630c2417aab41a461c409313a15b8
 =======
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 >>>>>>> 14e816fe67a630c2417aab41a461c409313a15b8
@@ -48,7 +52,11 @@ CREATE TABLE `hero` (
 LOCK TABLES `hero` WRITE;
 /*!40000 ALTER TABLE `hero` DISABLE KEYS */;
 <<<<<<< HEAD
+<<<<<<< HEAD
 INSERT INTO `hero` VALUES (5,'Sailormoon');
+=======
+INSERT INTO `hero` VALUES (3,'Test'),(4,'Party!');
+>>>>>>> 14e816fe67a630c2417aab41a461c409313a15b8
 =======
 INSERT INTO `hero` VALUES (3,'Test'),(4,'Party!');
 >>>>>>> 14e816fe67a630c2417aab41a461c409313a15b8
@@ -65,7 +73,11 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 -- Dump completed on 2018-02-16  7:13:06
+=======
+-- Dump completed on 2018-02-16 19:32:59
+>>>>>>> 14e816fe67a630c2417aab41a461c409313a15b8
 =======
 -- Dump completed on 2018-02-16 19:32:59
 >>>>>>> 14e816fe67a630c2417aab41a461c409313a15b8
