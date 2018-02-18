@@ -5,7 +5,7 @@ require 'inc/conn.php';
 //DELETE INFORMATION COMMAND
 
 try {
-	$query = "DELETE FROM hero WHERE id = " .$_REQUEST['id'];
+	$query = "DELETE FROM sites WHERE id = " .$_REQUEST['id'];
 	//echo $query;
 
 	$conn->exec($query);

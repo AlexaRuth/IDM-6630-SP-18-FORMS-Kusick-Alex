@@ -9,7 +9,7 @@
 <body>
 
 	<header>
-		<?php echo "<h1>Favorite Superhero</h1>";?>
+		<?php echo "<h1>Saved For a Rainy Day</h1>";?>
 		<nav><?php include "inc/nav.php" ?></nav>
 	</header>
 
@@ -23,34 +23,34 @@
 
 	<form action="insert.php" method="post">
 		<input type="text" name="name" placeholder="Name">
-		<input type="submit" value="Add Hero">
+		<input type="submit" value="Add Site">
 	</form>
 
 
 
 	<?php
 
-		$query = "SELECT * FROM hero ORDER BY id DESC";
+		$query = "SELECT * FROM sites ORDER BY id DESC";
 		//$query = "SELECT * FROM hero WHERE name = 'Sailormoon' "; //to find a specific piece of information
 
-		foreach ($conn->query($query) as $hero) {
+		foreach ($conn->query($query) as $site) {
 			//echo $hero['id'] . ", " . $hero['name']; //do not show ID
 
 			echo "<ul>";
 
-				echo "<li>" . $hero['id'] . "</li>";
-				echo "<li>" . $hero['name'] . "</li>";
+				echo "<li>" . $site['id'] . "</li>";
+				echo "<li>" . $site['name'] . "</li>";
 
 				echo "<li>
 				<form action='stage.php' method='post'>
-					<input type='text' name='id' value='". $hero['id'] . "'/>
+					<input type='text' name='id' value='". $site['id'] . "'/>
 					<input type='submit' value='Edit'></submit>
 				</form>
 				</li>";
 
 				echo "<li>
 				<form action='delete.php' method='post'>
-					<input type='text' name='id' value='". $hero['id'] . "'/>
+					<input type='text' name='id' value='". $site['id'] . "'/>
 					<input type='submit' value='Delete'></submit>
 				</form>
 				</li>";

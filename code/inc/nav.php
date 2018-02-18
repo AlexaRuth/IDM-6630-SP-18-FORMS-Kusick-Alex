@@ -3,12 +3,12 @@
     <a href="/">Home</a>
   </li>
   <li>
-    <a href="/Update.php">Update</a>
+    <a href="/update.php">Update</a>
   </li>
   <li>
    <a href="/delete.php">Delete</a>
   </li>
   <li>
-   <a href="/Insert.php">Insert</a>
+   <a href="/insert.php">Insert</a>
   </li>
 </ul>
