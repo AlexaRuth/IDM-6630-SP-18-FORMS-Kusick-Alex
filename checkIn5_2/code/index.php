@@ -17,18 +17,12 @@
 		<?php
 
 			require 'inc/conn.php';
-
-			$query = "DELETE FROM hero WHERE id = " .$_REQUEST['id'];
-			$hero_to_update = $conn->query ($query)->fetch('name');
-			//echo $hero_to_update['id'];
-			//echo $query;
-
-
 		?>
 
 
-	<form action="update.php" method="post">
-		<input type="text" name="name" value="<?php $hero_to_update['name'];?>">
+
+	<form action="insert.php" method="post">
+		<input type="text" name="name" placeholder="Name">
 		<input type="submit" value="Add Hero">
 	</form>
 
@@ -49,14 +43,14 @@
 
 				echo "<li>
 				<form action='stage.php' method='post'>
-					<input type='text' name='name' value='". $hero['id'] . "'/>
+					<input type='text' name='id' value='". $hero['id'] . "'/>
 					<input type='submit' value='Edit'></submit>
 				</form>
 				</li>";
 
 				echo "<li>
 				<form action='delete.php' method='post'>
-					<input type='text' name='name' value='". $hero['id'] . "'/>
+					<input type='text' name='id' value='". $hero['id'] . "'/>
 					<input type='submit' value='Delete'></submit>
 				</form>
 				</li>";
@@ -72,6 +66,7 @@
 		//}
 
 	?>
+
 
 </body>
 </html>
