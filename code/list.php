@@ -13,7 +13,7 @@ foreach ($conn->query($query) as $site) {
 
 		<form action='delete.php' method='post'>
 			<input type='hidden' name='site_id' value='". $site['id'] . "'/>
-			<input type='submit' value='Delete'></submit>
+			<input type='submit' value='drop it'></submit>
 		</form>
 
 		</li>";
@@ -21,7 +21,7 @@ foreach ($conn->query($query) as $site) {
 		echo "<li>
 		<form action='stage.php' method='post'>
 			<input type='hidden' name='site_id' value='". $site['id'] . "'/>
-			<input type='submit' value='Edit'></submit>
+			<input type='submit' value='change it'></submit>
 		</form>
 		</li>";
 
