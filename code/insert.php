@@ -1,30 +1,22 @@
 <?php
 
-
 require 'inc/conn.php';
 
 
 //INSERT COMMANDS
-	try {
+try {
 
-		//$query = "INSERT INTO `hero` (`id`, `name`) VALUES (NULL, 'Sailormoon')";
+	$query = "INSERT INTO sites (site_url, site_name) VALUES ('" . $_REQUEST['site_url'] . "', '" . $_REQUEST['site_name'] . "')";
+	$conn->exec($query);
 
-		$query = "INSERT INTO sites (name) VALUES ('" . $_REQUEST['name'] . "')";
-		$conn->exec($query);
-		//echo " <br /> Values inserted into the database.";
+	header('Location: index.php');
 
-		//$conn = null;
+} catch(PDOException $e) {
 
-		header('Location: index.php');
+	echo "Insert Failed: " . $e->getMessage();
+	$conn = null;
+	exit();
 
-	} catch(PDOException $e) {
+}
 
-		echo "Insert Failed: " . $e->getMessage();
-		$conn = null;
-		exit();
-
-	}
-
-
-
-	?>
+?>

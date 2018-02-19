@@ -1,4 +1,5 @@
 <?php
+
 	$host = "172.21.0.2";
 	$database = "week05";
 	$username = "idm6630";

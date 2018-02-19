@@ -5,11 +5,9 @@ require 'inc/conn.php';
 //DELETE INFORMATION COMMAND
 
 try {
-	$query = "DELETE FROM sites WHERE id = " .$_REQUEST['id'];
-	//echo $query;
-
+	$query = "DELETE FROM sites WHERE id = " .$_REQUEST['site_id'];
 	$conn->exec($query);
-	//echo "Data Deleted";
+
 	header('Location: index.php');
 
 } catch(PDOException $e) {

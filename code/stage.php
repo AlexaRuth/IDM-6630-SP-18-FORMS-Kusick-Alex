@@ -10,7 +10,6 @@
 
 	<header>
 		<?php echo "<h1>Saved For a Rainy Day</h1>";?>
-		<nav><?php include "inc/nav.php" ?></nav>
 	</header>
 
 
@@ -18,18 +17,18 @@
 
 			require 'inc/conn.php';
 
-			$query = "DELETE FROM sites WHERE id = " .$_REQUEST['id'];
-			$hero_to_update = $conn->query ($query)->fetch('name');
-			//echo $hero_to_update['id'];
-			//echo $query;
-
+			$query = "SELECT * FROM sites WHERE id = " .$_REQUEST['site_id'];
+			$site_to_update = $conn->query ($query)->fetch();
 
 		?>
 
 
 	<form action="update.php" method="post">
-		<input type="text" name="name" value="<?php $site_to_update['name'];?>">
-		<input type="submit" value="Add Site">
+
+		<input type="text" name="site_name" value="<?php echo $site_to_update['site_name']; ?>">
+		<input type="text" name="site_url" value="<?php echo $site_to_update['site_url']; ?>">
+		<input type="hidden" name="site_id" value="<?php echo $site_to_update['id']; ?>">
+		<input type="submit" value="Update Site">
 	</form>
 
 
@@ -37,39 +36,32 @@
 	<?php
 
 		$query = "SELECT * FROM sites ORDER BY id DESC";
-		//$query = "SELECT * FROM hero WHERE name = 'Sailormoon' "; //to find a specific piece of information
 
 		foreach ($conn->query($query) as $site) {
-			//echo $hero['id'] . ", " . $hero['name']; //do not show ID
 
 			echo "<ul>";
 
-				echo "<li>" . $site['id'] . "</li>";
-				echo "<li>" . $site['name'] . "</li>";
+				echo "<li>" . $site['site_name'] . "</li>";
+				echo "<li>" . $site['site_url'] . "</li>";
+				//echo "<li>" . $site['id'] . "</li>";
+				echo "<li>
+
+				<form action='delete.php' method='post'>
+					<input type='hidden' name='site_id' value='". $site['id'] . "'/>
+					<input type='submit' value='Delete'></submit>
+				</form>
+
+				</li>";
 
 				echo "<li>
 				<form action='stage.php' method='post'>
-					<input type='text' name='name' value='". $site['id'] . "'/>
+					<input type='hidden' name='site_id' value='". $site['id'] . "'/>
 					<input type='submit' value='Edit'></submit>
 				</form>
 				</li>";
 
-				echo "<li>
-				<form action='delete.php' method='post'>
-					<input type='text' name='name' value='". $site['id'] . "'/>
-					<input type='submit' value='Delete'></submit>
-				</form>
-				</li>";
-
-
-
 			echo "</ul>";
 		}
-
-		//} catch(PDOException $e) {
-		//	echo "Select Failed: " . $e->getMessage();
-		//	exit();
-		//}
 
 	?>
 
